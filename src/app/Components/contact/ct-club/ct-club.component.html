@@ -1,0 +1,227 @@
+<app-navbar-2></app-navbar-2>
+<section class="relative overflow-hidden">
+  <aside class="fixed top-28 inset-y-0 left-0 bg-white shadow-md w-60">
+    <div class="flex flex-col justify-between h-full">
+      <div class="flex-grow">
+        <div class="px-4 py-6 text-center border-b">
+          <h1 class="text-xl font-bold leading-none">
+            <span class="text-yellow-700">LoisiResa </span> Planning
+          </h1>
+        </div>
+        <div class="p-4">
+          <ul class="space-y-1">
+            <li>
+              <a
+                href="javascript:void(0)"
+                [routerLink]="['/CtClub']"
+                class="flex items-center bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  class="text-lg mr-4"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
+                  /></svg
+                >Club
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                [routerLink]="['/CtReservation']"
+                class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  class="text-lg mr-4"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"
+                  /></svg
+                >Reservation
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"
+              >
+                <i class="fa-solid fa-comments text-lg mr-4"></i>
+                Messages
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="ml-60 pt-12 max-h-screen overflow-auto">
+    <div class="px-6 py-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl p-8 mb-5">
+          <h1 class="text-3xl font-bold mb-10">TranqHorse-</h1>
+          <div class="flex items-center justify-between">
+            <div class="flex items-stretch">
+              <div class="text-gray-400 text-xs">
+                <img
+                  class="w-20 rounded-full bg-blue-200"
+                  src="../../../../assets/img/logo.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-100 border-l mx-4"></div>
+              <div class="flex">
+                <div class="font-bold">
+                  <i
+                    class="fa-solid fa-location-pin text-2xl text-[#00A878]"
+                  ></i>
+                  Casablanca , Morocco
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-x-2">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center h-9 px-3 rounded-xl border hover:border-gray-400 text-gray-800 hover:text-gray-900 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  class="bi bi-chat-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center h-9 px-5 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition"
+              >
+                Open
+              </button>
+            </div>
+          </div>
+
+          <hr class="my-10" />
+
+          <div class="grid grid-cols-2 gap-x-20">
+            <div>
+              <h2 class="text-2xl font-bold mb-4">Guides</h2>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="col-span-2">
+                  <div class="p-4 bg-green-100 rounded-xl">
+                    <div class="font-bold text-xl text-gray-800 leading-none">
+                      Mohcine Khribech
+                    </div>
+                    <div class="mt-5">
+                      <button
+                        type="button"
+                        class="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-white text-gray-800 hover:text-green-500 text-sm font-semibold transition"
+                      >
+                        Show details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
+                  <div class="font-bold text-2xl leading-none">20</div>
+                  <div class="mt-2">Guide Number</div>
+                </div>
+                <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
+                  <div class="font-bold text-2xl leading-none">5,5</div>
+                  <div class="mt-2">Tracked hours</div>
+                </div>
+                <div class="col-span-2">
+                  <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
+                    <div class="font-bold text-xl leading-none">
+                      Your daily plan
+                    </div>
+                    <div class="mt-2">5 of 8 completed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold mb-4">Today's reservation</h2>
+
+              <div class="space-y-4">
+                <div
+                  class="p-4 bg-white border rounded-xl text-gray-800 space-y-2"
+                >
+                  <div class="flex justify-between">
+                    <div class="text-gray-400 text-xs">20/02/2002</div>
+                    <div class="text-gray-400 text-xs">4h</div>
+                  </div>
+                  <a
+                    href="javascript:void(0)"
+                    class="font-bold hover:text-yellow-800 hover:underline"
+                    >Achchaimae Khalaf</a
+                  >
+                  <div class="text-sm text-gray-600">
+                    <i class="fa-brands fa-qq text-[#F3C178]"></i>
+                    Riding in sunset
+                  </div>
+                </div>
+                <div
+                  class="p-4 bg-white border rounded-xl text-gray-800 space-y-2"
+                >
+                  <div class="flex justify-between">
+                    <div class="text-gray-400 text-xs">Grace Aroma</div>
+                    <div class="text-gray-400 text-xs">7d</div>
+                  </div>
+                  <a
+                    href="javascript:void(0)"
+                    class="font-bold hover:text-yellow-800 hover:underline"
+                    >New campaign review</a
+                  >
+                  <div class="text-sm text-gray-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      class="text-gray-800 inline align-middle mr-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+                      /></svg
+                    >New feedback
+                  </div>
+                </div>
+                <div
+                  class="p-4 bg-white border rounded-xl text-gray-800 space-y-2"
+                >
+                  <div class="flex justify-between">
+                    <div class="text-gray-400 text-xs">Petz App</div>
+                    <div class="text-gray-400 text-xs">2h</div>
+                  </div>
+                  <a
+                    href="javascript:void(0)"
+                    class="font-bold hover:text-yellow-800 hover:underline"
+                    >Cross-platform and browser QA</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
