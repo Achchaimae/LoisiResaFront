@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { User } from 'src/app/core/model/User.model';
+import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/service/auth.service';
+import { selectUserState } from 'src/app/store/user.selectors';
+import { register } from 'src/app/store/user.action';
 
 @Component({
   selector: 'app-register',
@@ -6,5 +12,43 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  constructor(private store: Store, private router: Router, private authService: AuthService) {}
+  info: User = {
+    id: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    dateOfBirth: '',
+    password: '',
+    accessionDate: '',
+    nationality: '',
+    identityDocumentType: '',
+    identityNum: '',
+    role: 'client',
+    conversations: '',
+    messages: ''
+  };
+  error: string = '';
+  
+  register() {
+    this.authService.register(this.info).subscribe(data => {
+      return this.store.dispatch(register({
+        user: data.user,
+      }));
+  
+    })
+    // this.store.dispatch(register({ user: this.info }));
+    setTimeout(() => {
+      this.store.select(selectUserState).subscribe((res) => {
+        if (res.token && res.user) {
+          this.authService.setAuthInfo(res.token, res.user);
+          this.router.navigate(['/home']);
+        } else {
+          this.error = 'Registration failed';
+        }
+      });
+    }, 1000);
+  }
 
 }

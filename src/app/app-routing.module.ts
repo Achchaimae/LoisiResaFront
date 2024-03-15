@@ -11,7 +11,9 @@ import { CtManagementComponent } from './Components/contact/ct-management/ct-man
 import { GHomeComponent } from './Components/guide/ghome/ghome.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { LoginComponent } from './Components/auth/login/login.component';
-//
+import { AdminComponent } from './Components/admin/admin/admin.component';
+import { RegisterComponent } from './Components/auth/register/register.component';
+
 
 
 const routes: Routes = [
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path :"CtReservation", component:ReservationComponent},
   {path :"guide", component: GHomeComponent},
   {path :"login",component:LoginComponent},
+  {path: "register", component:RegisterComponent},
+  {path:"admin",component:AdminComponent},
   {path :"**", component: NotFoundComponent},
  
 ];

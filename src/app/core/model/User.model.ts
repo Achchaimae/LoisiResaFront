@@ -4,13 +4,14 @@ export interface User {
     firstName: '',
     lastName: '',
     email :'',
-    address:'',
-    dateOfBirth:Date
+    address:'', //
+    dateOfBirth:Date|string //
     password : '';
-    accessionDate : Date |null;
+    accessionDate : Date |string;
     nationality : string;
     identityDocumentType : ''| 'CIN'|'CARTE_RESIDENCE'|'PASSPORT';
     identityNum :'';
     role : ''| 'admin'|'client'|'guide'|'contact'; 
     conversations :'',
-    messages:''}
+    messages:''
+}

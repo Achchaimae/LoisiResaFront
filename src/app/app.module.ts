@@ -17,6 +17,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/user.effects';
 import { LoginComponent } from './Components/auth/login/login.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { AdminComponent } from './Components/admin/admin/admin.component';
+import { AdminNavComponent } from './Components/admin/admin-nav/admin-nav.component';
 
 export function tokenGetter() {
   const token = getCookie('token');
@@ -39,6 +41,8 @@ const jwtModuleOptions: JwtModuleOptions = {
     RegisterComponent,
     LoginComponent,
     NotFoundComponent,
+    AdminComponent,
+    AdminNavComponent,
     
 
     

@@ -29,7 +29,7 @@ export class LoginComponent {
     
     setTimeout(() => {
       this.store.select(selectUserState).subscribe((res) => {
-        console.log(res);
+        
         if (res.token && res.user) {
           this.authService.setAuthInfo(res.token,res.user);
           this.router.navigate(['/home']);
