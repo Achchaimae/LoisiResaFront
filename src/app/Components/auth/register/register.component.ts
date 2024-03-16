@@ -26,15 +26,19 @@ export class RegisterComponent {
     identityDocumentType: '',
     identityNum: '',
     role: 'client',
-    conversations: '',
-    messages: ''
+    requestedRole: '',
+    requestStatus: 1, //0 is rejected 1 is pending 2 is approved,
+    conversations: [],
+    messages: []
   };
   error: string = '';
   
   register() {
     this.authService.register(this.info).subscribe(data => {
+      
       return this.store.dispatch(register({
         user: data.user,
+        
       }));
   
     })
@@ -43,12 +47,12 @@ export class RegisterComponent {
       this.store.select(selectUserState).subscribe((res) => {
         if (res.token && res.user) {
           this.authService.setAuthInfo(res.token, res.user);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         } else {
           this.error = 'Registration failed';
         }
       });
     }, 1000);
   }
-
+  
 }

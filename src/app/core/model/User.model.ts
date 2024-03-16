@@ -3,15 +3,17 @@ export interface User {
     id:string ,
     firstName: '',
     lastName: '',
+    dateOfBirth:Date|string 
+    address:'', 
     email :'',
-    address:'', //
-    dateOfBirth:Date|string //
+    identityDocumentType : ''| 'CIN'|'CARTE_RESIDENCE'|'PASSPORT';
+    identityNum :'';
     password : '';
     accessionDate : Date |string;
     nationality : string;
-    identityDocumentType : ''| 'CIN'|'CARTE_RESIDENCE'|'PASSPORT';
-    identityNum :'';
     role : ''| 'admin'|'client'|'guide'|'contact'; 
-    conversations :'',
-    messages:''
+    requestedRole:''| 'admin'|'client'|'guide'|'contact';
+    requestStatus : number,
+    conversations: []; // Adjust the type as per the actual data structure
+    messages: []; 
 }

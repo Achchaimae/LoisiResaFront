@@ -13,23 +13,32 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { LoginComponent } from './Components/auth/login/login.component';
 import { AdminComponent } from './Components/admin/admin/admin.component';
 import { RegisterComponent } from './Components/auth/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AccountsComponent } from './Components/admin/accounts/accounts.component';
 
 
 
 const routes: Routes = [
+  // client side
   {path: "" ,component:HomeComponent},
   {path: "home" ,component:HomeComponent},
   {path: "Activity", component :ActivityComponent},
   {path: "poste", component :PosteComponent},
   {path :"paiment", component:PaimentComponent},
+  //contact side 
   {path :"CtHome", component:CThomeComponent},
   {path :"CtClub", component:CtClubComponent},
   {path :"CtManagement", component:CtManagementComponent},
   {path :"CtReservation", component:ReservationComponent},
+  // guide side
   {path :"guide", component: GHomeComponent},
   {path :"login",component:LoginComponent},
   {path: "register", component:RegisterComponent},
+  // admin side
   {path:"admin",component:AdminComponent},
+  {path:"accounts",component:AccountsComponent},
+
+
   {path :"**", component: NotFoundComponent},
  
 ];

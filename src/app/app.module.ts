@@ -19,6 +19,7 @@ import { LoginComponent } from './Components/auth/login/login.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { AdminComponent } from './Components/admin/admin/admin.component';
 import { AdminNavComponent } from './Components/admin/admin-nav/admin-nav.component';
+import { AccountsComponent } from './Components/admin/accounts/accounts.component';
 
 export function tokenGetter() {
   const token = getCookie('token');
@@ -43,6 +44,7 @@ const jwtModuleOptions: JwtModuleOptions = {
     NotFoundComponent,
     AdminComponent,
     AdminNavComponent,
+    AccountsComponent,
     
 
     

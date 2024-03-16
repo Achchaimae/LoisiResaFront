@@ -9,6 +9,7 @@ import { User } from '../model/User.model';
   providedIn: 'root'
 })
 export class AuthService {
+ 
   private apiUrl = 'http://localhost:8080/auth';
   private jwtHelper: JwtHelperService = new JwtHelperService();
   httpOptions = {
@@ -23,6 +24,22 @@ export class AuthService {
   authentication(data:any): Observable<any> {
     return this.http.post(`${this.apiUrl}/authenticate`,data);
   }
+
+  getUserBystatus(staus: number): Observable<User> {
+    const url = `${this.apiUrl}/user/${staus}`;
+    return this.http.get<User>(url);
+  }
+  updateUserRole(userId: string, newRole: string): Observable<User> {
+    const url = `${this.apiUrl}/${userId}/role`;
+    const params = { newRole }; // Include new role as query parameter
+    return this.http.put<User>(url, null, { params });
+  }
+  refuseRequest(userId: string): Observable<void> {
+    const url = `${this.apiUrl}/user/${userId}/refuse`;
+    return this.http.put<void>(url, {});
+  }
+
+
 
   getUserInfo(token: string): any {
     const decodedToken = this.jwtHelper.decodeToken(token);
