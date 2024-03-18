@@ -20,6 +20,8 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { AdminComponent } from './Components/admin/admin/admin.component';
 import { AdminNavComponent } from './Components/admin/admin-nav/admin-nav.component';
 import { AccountsComponent } from './Components/admin/accounts/accounts.component';
+import { DatePipe } from '@angular/common';
+import { ClubsComponent } from './Components/admin/clubs/clubs.component';
 
 export function tokenGetter() {
   const token = getCookie('token');
@@ -45,6 +47,7 @@ const jwtModuleOptions: JwtModuleOptions = {
     AdminComponent,
     AdminNavComponent,
     AccountsComponent,
+    ClubsComponent,
     
 
     
@@ -59,10 +62,11 @@ const jwtModuleOptions: JwtModuleOptions = {
     ContactModule,
     GuideModule,
     StoreModule.forRoot({ userFeature: authReducer}),
-    JwtModule.forRoot(jwtModuleOptions)
+    JwtModule.forRoot(jwtModuleOptions),
+    EffectsModule.forRoot(AuthEffects)
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

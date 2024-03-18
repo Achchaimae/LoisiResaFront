@@ -1,9 +1,99 @@
 <app-navbar-2></app-navbar-2>
-<section class="container m-auto">
+
+<section class="mx-16 flex justify-between items-center">
   <h1 class="text-3xl text-[#667085] font-bold">
     Welcome Back
     <span class="font-[Caveat] font-normal text-4xl text-[#F3C178]"
       >Achchaimae</span
     >
   </h1>
+
+  <div class="b h-12 w-64 flex justify-center items-center">
+    <div
+      class="i h-14 w-64 bg-gradient-to-br from-blue-400 to-blue-600 items-center rounded-xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"
+      (click)="toggleFormVisibility()"
+    ></div>
+    <a
+      class="text-center text-white font-semibold z-10 pointer-events-none flex justify-content items-center"
+      ><span></span>Create my Club</a
+    >
+  </div>
+</section>
+
+<section
+  [@fadeInOut]="isFormVisible ? 'visible' : 'hidden'"
+  class="form-section"
+  *ngIf="isFormVisible"
+>
+  <div
+    class="max-w-4xl mt-24 p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800"
+  >
+    <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">
+      Club Info
+    </h2>
+
+    <form (ngSubmit)="submitForm()">
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <div>
+          <label class="text-gray-700 dark:text-gray-200" for="name"
+            >Name</label
+          >
+          <input
+          [(ngModel)]="clubForm.name"
+            id="name"
+            type="text"
+            name="name"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+          />
+        </div>
+
+        <div>
+          <label class="text-gray-700 dark:text-gray-200" for="phone"
+            >Phone</label
+          >
+          <input
+          [(ngModel)]="clubForm.phone"
+            id="phone"
+            type="tel"
+            name="phone"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+          />
+        </div>
+
+        <div>
+          <label class="text-gray-700 dark:text-gray-200" for="location"
+            >Location</label
+          >
+          <input
+          [(ngModel)]="clubForm.location"
+            id="location"
+            type="text"
+            name="location"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+          />
+        </div>
+
+        <div>
+          <label class="text-gray-700 dark:text-gray-200" for="logo"
+            >Logo</label
+          >
+          <input
+          [(ngModel)]="clubForm.logo"
+            id="logo"
+            type="text"
+            name="logo"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+          />
+        </div>
+      </div>
+
+      <div class="flex justify-end mt-6">
+        <button
+          class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
 </section>

@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CtClubComponent } from './ct-club/ct-club.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { CtManagementComponent } from './ct-management/ct-management.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { CtManagementComponent } from './ct-management/ct-management.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports : [
     CThomeComponent,

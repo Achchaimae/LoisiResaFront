@@ -15,6 +15,7 @@ import { AdminComponent } from './Components/admin/admin/admin.component';
 import { RegisterComponent } from './Components/auth/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AccountsComponent } from './Components/admin/accounts/accounts.component';
+import { ClubsComponent } from './Components/admin/clubs/clubs.component';
 
 
 
@@ -35,10 +36,9 @@ const routes: Routes = [
   {path :"login",component:LoginComponent},
   {path: "register", component:RegisterComponent},
   // admin side
-  {path:"admin",component:AdminComponent},
-  {path:"accounts",component:AccountsComponent},
-
-
+  {path:"admin",component:AdminComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
+  {path:"accounts",component:AccountsComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
+  {path:"Clubs",component:ClubsComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
   {path :"**", component: NotFoundComponent},
  
 ];

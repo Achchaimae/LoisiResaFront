@@ -6,6 +6,9 @@ import { Store } from '@ngrx/store';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../core/service/auth.service';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthGuard implements CanActivate {
 
   constructor(private store:Store, private router: Router,private authService:AuthService,private jwtHelper: JwtHelperService) {}
