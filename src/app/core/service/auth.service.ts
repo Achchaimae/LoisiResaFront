@@ -71,7 +71,6 @@ export class AuthService {
     }
   }
 
-  // Clear the authentication token from the cookie
   clearAuthToken(): void {
     this.cookieService.delete('token');
     this.cookieService.delete('user');

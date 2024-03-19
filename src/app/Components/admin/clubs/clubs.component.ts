@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ClubRespDTO } from 'src/app/core/model/ClubResp.model';
+import { AuthService } from 'src/app/core/service/auth.service';
 import { ClubService } from 'src/app/core/service/club.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ClubsComponent {
 
   pendingClubs: ClubRespDTO[] = []; 
 
-  constructor(private clubService: ClubService) { } 
+  constructor(private clubService: ClubService , public authService : AuthService) { } 
 
   ngOnInit(): void {
     this.getPendingClubs(0); 

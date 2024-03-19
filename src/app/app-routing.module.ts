@@ -11,7 +11,7 @@ import { CtManagementComponent } from './Components/contact/ct-management/ct-man
 import { GHomeComponent } from './Components/guide/ghome/ghome.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { LoginComponent } from './Components/auth/login/login.component';
-import { AdminComponent } from './Components/admin/admin/admin.component';
+// import { AdminComponent } from './Components/admin/admin/admin.component';
 import { RegisterComponent } from './Components/auth/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AccountsComponent } from './Components/admin/accounts/accounts.component';
@@ -36,7 +36,7 @@ const routes: Routes = [
   {path :"login",component:LoginComponent},
   {path: "register", component:RegisterComponent},
   // admin side
-  {path:"admin",component:AdminComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
+  // {path:"admin",component:AdminComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
   {path:"accounts",component:AccountsComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
   {path:"Clubs",component:ClubsComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
   {path :"**", component: NotFoundComponent},
