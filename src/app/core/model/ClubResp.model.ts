@@ -1,3 +1,5 @@
+import { ContactReqDTO } from "./ContactReqDTO.model";
+
 export interface ClubRespDTO {
     id: number;
     name: string;
@@ -5,7 +7,7 @@ export interface ClubRespDTO {
     phone: number;
     logo: string;
     status: '' | 'Accepted'| 'Rejected' |'Pending';
+    owner: ContactReqDTO;
     activities?: any[]; // Optional properties
-    contactList?: any[]; // Optional properties
     guides?: any[]; 
 }

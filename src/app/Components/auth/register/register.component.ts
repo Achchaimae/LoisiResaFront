@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { selectUserState } from 'src/app/store/user.selectors';
-import { register } from 'src/app/store/user.action';
+import { register, successLogin } from 'src/app/store/user.action';
 
 @Component({
   selector: 'app-register',
@@ -36,9 +36,9 @@ export class RegisterComponent {
   register() {
     this.authService.register(this.info).subscribe(data => {
       
-      return this.store.dispatch(register({
+      return this.store.dispatch(successLogin({
         user: data.user,
-        
+        token: data.access_token,
       }));
   
     })

@@ -5,5 +5,6 @@ export interface ClubReqDTO {
     phone: string;
     logo: string;
     status: ''| 'Accepted'| 'Rejected' |'Pending', 
+    ownerId:string
   }
   

@@ -31,23 +31,23 @@ export class AuthEffects {
     )
   );
 
-  register$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType("[Auth] register"),
+  // register$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType("[Auth] register"),
       
-      switchMap((action: { user: User }): Observable<any> => {
-        return this.authService.register(action.user).pipe(
-          map((data) => {
-            return MyActions.successLogin({
-              user: data.user,
-              token: data.access_token,
-            });
-          })
-        )
-      }
-      )
-    )
-  );
+  //     switchMap((action: { user: User }): Observable<any> => {
+  //       return this.authService.register(action.user).pipe(
+  //         map((data) => {
+  //           return MyActions.successLogin({
+  //             user: data.user,
+  //             token: data.access_token,
+  //           });
+  //         })
+  //       )
+  //     }
+  //     )
+  //   )
+  // );
   
 
   constructor(private actions$: Actions, private authService: AuthService) {}
