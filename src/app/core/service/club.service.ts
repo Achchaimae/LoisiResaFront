@@ -26,4 +26,7 @@ export class ClubService {
   refuseRequest(clubId: number): Observable<ClubRespDTO> {
     return this.http.put<ClubRespDTO>(`${this.apiUrl}/refuse/${clubId}`, {});
   }
+  getAcceptedClubByOwner(ownerId: string): Observable<ClubRespDTO> {
+    return this.http.get<ClubRespDTO>(`${this.apiUrl}/owner/${ownerId}/accepted`);
+  }
 }

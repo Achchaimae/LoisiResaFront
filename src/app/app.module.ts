@@ -63,7 +63,8 @@ const jwtModuleOptions: JwtModuleOptions = {
     GuideModule,
     StoreModule.forRoot({ userFeature: authReducer}),
     JwtModule.forRoot(jwtModuleOptions),
-    EffectsModule.forRoot(AuthEffects)
+    EffectsModule.forRoot(AuthEffects),
+    
     
   ],
   providers: [DatePipe],

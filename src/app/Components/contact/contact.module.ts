@@ -7,6 +7,9 @@ import { CtClubComponent } from './ct-club/ct-club.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { CtManagementComponent } from './ct-management/ct-management.component';
 import { FormsModule } from '@angular/forms';
+import { AddGuideComponent } from './add-guide/add-guide.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -16,12 +19,14 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     CtClubComponent,
     ReservationComponent,
-    CtManagementComponent
+    CtManagementComponent,
+    AddGuideComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    BrowserModule, HttpClientModule
   ],
   exports : [
     CThomeComponent,

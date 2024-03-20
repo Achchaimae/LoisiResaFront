@@ -1,4 +1,5 @@
 import { ContactReqDTO } from "./ContactReqDTO.model";
+import { GuideRespDTO } from "./GuideRespDTO.model";
 
 export interface ClubRespDTO {
     id: number;
@@ -9,5 +10,5 @@ export interface ClubRespDTO {
     status: '' | 'Accepted'| 'Rejected' |'Pending';
     owner: ContactReqDTO;
     activities?: any[]; // Optional properties
-    guides?: any[]; 
+    guides: GuideRespDTO[]; 
 }
