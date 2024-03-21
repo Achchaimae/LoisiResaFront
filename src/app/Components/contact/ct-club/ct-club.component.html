@@ -197,8 +197,10 @@
                   <div class="mt-2">Guide Number</div>
                 </div>
                 <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
-                  <div class="font-bold text-2xl leading-none">5,5</div>
-                  <div class="mt-2">Tracked hours</div>
+                  <div class="font-bold text-2xl leading-none">
+                    {{ acceptedClub?.activities?.length }}
+                  </div>
+                  <div class="mt-2">Activity Number</div>
                 </div>
                 <div class="col-span-2">
                   <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
@@ -227,7 +229,7 @@
                             <h3
                               class="text-xl font-semibold text-gray-900 dark:text-white"
                             >
-                              Add New Level
+                              Add New Activity
                             </h3>
                             <button
                               (click)="closeAddActivity()"

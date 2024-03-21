@@ -29,7 +29,22 @@
           [(ngModel)]="activityReq.tariff"
           required
           class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-          placeholder="Enter password"
+          placeholder="Enter Tariff"
+        />
+      </div>
+    </div>
+    <div>
+      <label for="tag">Tag</label>
+
+      <div class="relative">
+        <input
+          type="text"
+          id="tag"
+          name="tag"
+          [(ngModel)]="activityReq.tag"
+          required
+          class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          placeholder="Enter tag"
         />
       </div>
     </div>
@@ -45,7 +60,7 @@
         />
         <button
           type="button"
-          class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+          class="inline-block rounded-lg bg-[#D8F1A0] px-5 py-3 text-sm font-medium text-white"
           (click)="addMedia()"
         >
           Add
@@ -65,7 +80,7 @@
     <div class="flex items-center justify-between">
       <button
         type="submit"
-        class="inline-block rounded-lg bg-blue-500 mb-4 px-5 py-3 text-sm font-medium text-white"
+        class="inline-block rounded-lg bg-[#00A878] mb-4 px-5 py-3 text-sm font-medium text-white"
       >
         Save Activity
       </button>

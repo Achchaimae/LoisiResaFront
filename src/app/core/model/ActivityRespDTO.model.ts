@@ -8,6 +8,7 @@ export interface ActivityRespDTO{
     name: string;
     tariff: number;
     rating?: number;
+    tag:string;
     guideList: GuideReqDTO[];
     reservations: any[];
     club: ClubRespDTO;
