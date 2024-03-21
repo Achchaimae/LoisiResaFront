@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AddGuideComponent } from './add-guide/add-guide.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { AddActivityComponent } from './add-activity/add-activity.component';
 
 
 
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     CtClubComponent,
     ReservationComponent,
     CtManagementComponent,
-    AddGuideComponent
+    AddGuideComponent,
+    AddActivityComponent
   ],
   imports: [
     CommonModule,

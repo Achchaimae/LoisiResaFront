@@ -15,6 +15,7 @@ export class CtClubComponent {
   acceptedClub: ClubRespDTO | undefined;
   guides:GuideRespDTO[]=[];
   isShowAddGuide : boolean = false;
+  isShowAddActivity :boolean = false
   constructor(private clubService: ClubService,public authService:AuthService, public guideService :GuideService) {}
 
   ngOnInit(): void {
@@ -53,7 +54,13 @@ export class CtClubComponent {
   {
     this.isShowAddGuide = false;
     this.getGuides();
-    }
+  }
+
+  closeAddActivity()
+  {
+    this.isShowAddActivity = false;
+    
+  }
     showGuideDetails() {
       if (this.acceptedClub && this.acceptedClub.guides.length > 0) {
         const guides = this.acceptedClub.guides;
