@@ -29,4 +29,8 @@ export class ClubService {
   getAcceptedClubByOwner(ownerId: string): Observable<ClubRespDTO> {
     return this.http.get<ClubRespDTO>(`${this.apiUrl}/owner/${ownerId}/accepted`);
   }
+  getClubById(clubId: number): Observable<ClubRespDTO> {
+    const url = `${this.apiUrl}/find/${clubId}`;
+    return this.http.get<ClubRespDTO>(url);
+  }
 }

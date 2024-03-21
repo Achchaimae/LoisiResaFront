@@ -30,6 +30,11 @@ export class CtClubComponent {
         (club: ClubRespDTO) => {
           this.acceptedClub = club;
           console.log('Accepted Club:', this.acceptedClub);
+
+          // Store the club_id in local storage
+        if (this.acceptedClub && this.acceptedClub.id) {
+          localStorage.setItem('club_id', this.acceptedClub.id.toString());
+        }
         },
         (error) => {
           console.error('Error fetching accepted club:', error);

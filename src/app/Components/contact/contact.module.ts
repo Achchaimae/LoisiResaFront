@@ -11,6 +11,7 @@ import { AddGuideComponent } from './add-guide/add-guide.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AddActivityComponent } from './add-activity/add-activity.component';
+import { GalerieComponent } from './galerie/galerie.component';
 
 
 
@@ -22,7 +23,8 @@ import { AddActivityComponent } from './add-activity/add-activity.component';
     ReservationComponent,
     CtManagementComponent,
     AddGuideComponent,
-    AddActivityComponent
+    AddActivityComponent,
+    GalerieComponent
   ],
   imports: [
     CommonModule,

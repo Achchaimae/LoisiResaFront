@@ -15,4 +15,16 @@ export class ActivityService {
   saveActivity(activity: ActivityReqDTO): Observable<ActivityRespDTO> {
     return this.http.post<ActivityRespDTO>(`${this.apiUrl}`, activity);
   }
+  getActivitiesByClubId(clubId: number, page: number): Observable<ActivityRespDTO[]> {
+    const url = `${this.apiUrl}/club/${clubId}?page=${page}&size=${8}`;
+    return this.http.get<ActivityRespDTO[]>(url);
+  }
+
+  getPendingClubs(page: number): Observable<ActivityRespDTO[]> {
+    return this.http.get<ActivityRespDTO[]>(this.apiUrl+ '/pending'+'?size=8&page=' + page);
+  }
+  getActivityById(activityId: number): Observable<ActivityRespDTO> {
+    const url = `${this.apiUrl}/find/${activityId}`;
+    return this.http.get<ActivityRespDTO>(url);
+  }
 }

@@ -63,41 +63,6 @@ export class CThomeComponent  {
       console.error('User ID is missing or undefined.');
     }
   }
-  
-  // submitForm() {
-  //   const token = this.authService.getAuthToken(); 
-  //   const user = this.authService.getAuthUser();
-  //   const userRole = user?.role;
-  // console.log(user?.id);
-  
-  //   if (userRole === 'contact') {
-  //     const userId = user?.id; // Get user's ID from the cookie
-  //     // if (userId) {
-  //     //   this.clubForm.owner_id = userId; // Set owner_id in the clubForm
-  //     // }
 
-    
-  // this.clubForm.owner_id =="55"
-  //   this.clubService.saveClub(this.clubForm).subscribe(
-  //     (response) => {
-  //       Swal.fire({
-  //         icon: 'success',
-  //         title: 'Club saved successfully',
-  //         showConfirmButton: false,
-  //         timer: 1500
-  //       });
-  //     },
-  //     (error) => {
-  //       Swal.fire({
-  //         icon: 'error',
-  //         title: 'Error',
-  //         text: 'Failed to save club',
-  //         showConfirmButton: false,
-  //         timer: 1500
-  //       });
-  //     }
-  //   );
-  //   }
-  // }
   
 }

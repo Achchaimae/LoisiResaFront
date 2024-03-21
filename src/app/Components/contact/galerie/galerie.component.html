@@ -1,0 +1,14 @@
+<div *ngIf="activity">
+  <div
+    *ngIf="activity.mediaList && activity.mediaList.length > 0"
+    class="image-gallery flex flex-wrap gap-4 items-center p-8"
+  >
+    <div class="image-container" *ngFor="let media of activity.mediaList">
+      <img
+        class="w-60 h-44 object-cover rounded hover:scale-110"
+        [src]="media.mediaUrl"
+        alt="Activity Image"
+      />
+    </div>
+  </div>
+</div>
