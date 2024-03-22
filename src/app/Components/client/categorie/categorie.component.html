@@ -1,87 +1,94 @@
 <div>
   <ul class="flex w-full justify-around">
-    <li>
-      <a
-        [routerLink]="['/home']"
+    <li (click)="selectTag('hiking')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
       >
         <i class="fa-solid fa-person-hiking text-2xl"></i>
-        <p class="text-sm">Hicking</p>
-      </a>
+        <p class="text-sm">Hiking</p>
+      </span>
     </li>
-    <li>
-      <a
-        [routerLink]="['/Activity']"
+    <li (click)="selectTag('swimming')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
       >
         <i class="fa-solid fa-person-swimming text-2xl"></i>
-        <p class="text-sm">Swiming</p>
-      </a>
+        <p class="text-sm">swimming</p>
+      </span>
     </li>
-    <li>
-      <a
+    <li (click)="selectTag('snowboarding')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
         ><i class="fa-solid fa-person-snowboarding text-2xl"></i>
         <p class="text-sm">snowboarding</p>
-      </a>
+      </span>
     </li>
-    <li>
-      <a
+    <li (click)="selectTag('ski')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
       >
         <i class="fa-solid fa-person-skiing-nordic text-2xl"></i>
         <p class="text-sm">Ski</p>
-      </a>
+      </span>
     </li>
-    <li>
-      <a
+    <li (click)="selectTag('camping')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
         ><i class="fa-solid fa-campground text-2xl"></i>
-        <p class="text-sm">Camping</p></a
+        <p class="text-sm">Camping</p></span
       >
     </li>
-    <li>
-      <a
+    <li (click)="selectTag('riding')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
         ><i class="fa-solid fa-horse-head text-2xl"></i>
-        <p class="text-sm">Hore's Rinding</p></a
+        <p class="text-sm">Hore's Rinding</p></span
       >
     </li>
-    <li>
-      <a
+    <li (click)="selectTag('gaming')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
         ><i class="fa-solid fa-headset text-2xl"></i>
-        <p class="text-sm">Gaming</p></a
+        <p class="text-sm">Gaming</p></span
       >
     </li>
-    <li>
-      <a
+    <li (click)="selectTag('golf')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
         ><i class="fa-solid fa-golf-ball-tee text-2xl"></i>
         <p class="text-sm">Golf</p>
-      </a>
+      </span>
     </li>
-    <li>
-      <a
+    <!-- <li (click)="selectTag('outdoor')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
         ><i class="fa-solid fa-bowling-ball text-2xl"></i>
-        <p class="text-sm">Outdoor's Activity</p></a
+        <p class="text-sm">Outdoor's Activity</p></span
       >
-    </li>
-    <li>
-      <a
+    </li> -->
+    <li (click)="selectTag('art')">
+      <span
         class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col"
-        href="#"
         ><i class="fa-solid fa-palette text-2xl"></i>
         <p class="text-sm">Art</p>
-      </a>
+      </span>
     </li>
   </ul>
 </div>
+<!-- <div>
+  <ul class="flex w-full justify-around">
+    <li>
+      <a (click)="(tagSelected | async) == 'all'('riding')" class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col">
+        <i class="fa-solid fa-person-hiking text-2xl"></i>
+        <p class="text-sm">Riding</p>
+      </a>
+    </li>
+    <li>
+      <a (click)="(tagSelected | async) == 'all'('swimming')" class="text-xl text-gray-400 hover:text-gray-500 flex items-center flex-col">
+        <i class="fa-solid fa-person-swimming text-2xl"></i>
+        <p class="text-sm">Swimming</p>
+      </a>
+    </li>
+    
+  </ul>
+</div> -->

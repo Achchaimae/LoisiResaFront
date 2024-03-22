@@ -3,8 +3,8 @@ import { User } from 'src/app/core/model/User.model';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/service/auth.service';
-import { selectUserState } from 'src/app/store/user.selectors';
-import { register, successLogin } from 'src/app/store/user.action';
+import { selectUserState } from 'src/app/store/user/user.selectors';
+import { register, successLogin } from 'src/app/store/user/user.action';
 
 @Component({
   selector: 'app-register',

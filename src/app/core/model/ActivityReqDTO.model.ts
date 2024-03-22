@@ -7,6 +7,6 @@ export interface ActivityReqDTO{
     tariff:number;
     rating:number;
     club_id:number;
-    tag:string;
+    tag:''|'riding';
     
 }

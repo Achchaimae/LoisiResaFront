@@ -11,10 +11,10 @@ import { GuideModule } from './Components/guide/guide.module';
 import { RegisterComponent } from './Components/auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { authReducer } from './store/user.reducer';
+import { authReducer } from './store/user/user.reducer';
 import { JwtModule,JwtModuleOptions } from '@auth0/angular-jwt';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './store/user.effects';
+import { AuthEffects } from './store/user/user.effects';
 import { LoginComponent } from './Components/auth/login/login.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { AdminComponent } from './Components/admin/admin/admin.component';
@@ -64,6 +64,7 @@ const jwtModuleOptions: JwtModuleOptions = {
     StoreModule.forRoot({ userFeature: authReducer}),
     JwtModule.forRoot(jwtModuleOptions),
     EffectsModule.forRoot(AuthEffects),
+    StoreModule.forRoot({}, {}),
     
     
   ],

@@ -1,4 +1,4 @@
-import { User } from "../core/model/User.model";
+import { User } from "../../core/model/User.model";
 
 
 export interface UserState {

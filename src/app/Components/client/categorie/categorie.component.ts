@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { ActivityService } from 'src/app/core/service/activity.service';
 
 @Component({
   selector: 'app-categorie',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./categorie.component.css']
 })
 export class CategorieComponent {
-
+  
+  constructor(private activityService : ActivityService) {}
+  
+  tagSelected : BehaviorSubject<string> = this.activityService.filter;
+  selectTag(tag: string): void {
+    
+    this.activityService.filter.next(tag)
+  }
 }
