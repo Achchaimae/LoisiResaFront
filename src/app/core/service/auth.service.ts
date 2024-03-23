@@ -53,7 +53,7 @@ export class AuthService {
 
   getAuthToken() : string
   {
-    // console.log(this.cookieService.get('token'))
+    
     return this.cookieService.get('token');
   }
   getAuthUser(): User | null {
@@ -72,9 +72,10 @@ export class AuthService {
   }
 
   clearAuthToken(): void {
-    this.cookieService.delete('token');
-    this.cookieService.delete('user');
+    this.cookieService.delete('token', '/');
+    this.cookieService.delete('user', '/');
   }
+    
 
   // Check if the user is authenticated based on the presence of a valid token in the cookie
   isAuthenticated(): Observable<boolean> {
