@@ -11,6 +11,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { ProgramComponent } from './program/program.component';
 import { PaimentComponent } from './paiment/paiment.component';
 import { CreditCardComponent } from './credit-card/credit-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CreditCardComponent } from './credit-card/credit-card.component';
     CreditCardComponent
   ],
   imports: [
+    FormsModule, 
     CommonModule,
     RouterModule 
   ],

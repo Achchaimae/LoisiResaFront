@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { loginInfo } from 'src/app/core/model/loginInfo.model';
 import { AuthService } from 'src/app/core/service/auth.service';
-import { login, successLogin } from 'src/app/store/user/user.action';
-import { selectUserState } from 'src/app/store/user/user.selectors';
+import { login, successLogin } from 'src/app/store/user.action';
+import { selectUserState } from 'src/app/store/user.selectors';
 
 @Component({
   selector: 'app-login',

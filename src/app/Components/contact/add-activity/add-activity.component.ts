@@ -19,7 +19,8 @@ export class AddActivityComponent {
     tariff: 0.0,
     rating: 0,
     club_id: 0,
-    tag: ''
+    tag: '',
+    description: ''
   };
   mediaUrl: string = '';
 

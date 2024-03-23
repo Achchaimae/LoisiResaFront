@@ -11,10 +11,8 @@ import { GuideModule } from './Components/guide/guide.module';
 import { RegisterComponent } from './Components/auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { authReducer } from './store/user/user.reducer';
 import { JwtModule,JwtModuleOptions } from '@auth0/angular-jwt';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './store/user/user.effects';
 import { LoginComponent } from './Components/auth/login/login.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { AdminComponent } from './Components/admin/admin/admin.component';
@@ -22,6 +20,8 @@ import { AdminNavComponent } from './Components/admin/admin-nav/admin-nav.compon
 import { AccountsComponent } from './Components/admin/accounts/accounts.component';
 import { DatePipe } from '@angular/common';
 import { ClubsComponent } from './Components/admin/clubs/clubs.component';
+import { authReducer } from './store/user.reducer';
+import { AuthEffects } from './store/user.effects';
 
 export function tokenGetter() {
   const token = getCookie('token');
@@ -63,8 +63,7 @@ const jwtModuleOptions: JwtModuleOptions = {
     GuideModule,
     StoreModule.forRoot({ userFeature: authReducer}),
     JwtModule.forRoot(jwtModuleOptions),
-    EffectsModule.forRoot(AuthEffects),
-    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([AuthEffects]),
     
     
   ],

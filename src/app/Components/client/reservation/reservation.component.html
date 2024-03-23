@@ -2,118 +2,49 @@
   class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg drop-shadow-lg"
 >
   <div class="px-6 py-4">
-    <div class="flex mx-auto font-semibold text-2xl">€80 by Day</div>
+    <div class="flex mx-auto font-semibold text-2xl">
+      €{{ activityData?.tariff }} by Day
+    </div>
 
-    <form class="mt-4">
+    <form class="mt-4" (submit)="saveReservation()">
       <div class="relative max-w-sm h-11">
-        <div
-          class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-        >
-          <svg
-            class="w-4 h-4 text-gray-500"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-            />
-          </svg>
-        </div>
         <input
-          datepicker
-          type="text"
+          type="date"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
           placeholder="Select date"
+          [(ngModel)]="reservation.date"
+          name="date"
         />
       </div>
       <div class="relative max-w-sm mt-4">
-        <label for="visitor-input" class="sr-only"
-          >Choose visitor number:</label
-        >
-        <div class="relative flex items-center mb-2">
-          <button
-            type="button"
-            id="decrement-button"
-            data-input-counter-decrement="visitor-input"
-            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
-          >
-            <svg
-              class="w-3 h-3 text-gray-900"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 2"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h16"
-              />
-            </svg>
-          </button>
-          <input
-            type="text"
-            id="visitor-input"
-            data-input-counter
-            data-input-counter-min="1"
-            data-input-counter-max="5"
-            class="bg-gray-100 border-x-0 disabled border-gray-300 h-11 font-medium text-center justify-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6"
-            placeholder=""
-            value="2"
-            required
-          />
-          <div
-            class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text-xs text-gray-400 space-x-1 rtl:space-x-reverse"
-          >
-            <i class="fa-solid fa-user"></i>
-            <span>Visitor</span>
-          </div>
-
-          <button
-            type="button"
-            id="increment-button"
-            data-input-counter-increment="visitor-input"
-            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
-          >
-            <svg
-              class="w-3 h-3 text-gray-900"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </button>
-        </div>
+        <input
+          type="number"
+          name="nbrPerson"
+          id="visitor-input"
+          [(ngModel)]="reservation.nbrPerson"
+          min="1"
+          max="5"
+          class="bg-gray-100 border-x-0 disabled border-gray-300 h-11 font-medium text-center justify-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6"
+          placeholder="Number of Visitors"
+          required
+        />
       </div>
 
       <p class="text-sm m-center my-4">
         No amount will be charged to you at this time
       </p>
       <div class="flex justify-between mb-4">
-        <p>Airbnb Service Fees</p>
-        <p>€40</p>
+        <p>LoisiResa Service Fees</p>
+        <p>€{{ fees }}</p>
       </div>
       <hr />
       <div class="flex justify-between my-4 font-semibold">
         <p>Total</p>
-        <p>€120</p>
+        <p>€{{ fees + (activityData?.tariff || 0) }}</p>
       </div>
 
       <div class="w-full mt-4">
-        <a
-          href="#_"
+        <button
           class="relative justify- w-full inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group"
         >
           <span
@@ -126,11 +57,13 @@
           <span
             class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"
           ></span>
-          <span
+          <button
+            type="submit"
             class="relative justify-center w-full text-center text-white transition-colors duration-200 ease-in-out group-hover:text-white"
-            >To Book</span
           >
-        </a>
+            To Book
+          </button>
+        </button>
       </div>
     </form>
   </div>

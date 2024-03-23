@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: "" ,component:HomeComponent},
   {path: "home" ,component:HomeComponent},
   {path: "Activity", component :ActivityComponent},
-  {path: "poste", component :PosteComponent},
+  { path: 'poste/:id', component: PosteComponent },
   {path :"paiment", component:PaimentComponent},
   //contact side 
   {path :"CtHome", component:CThomeComponent},

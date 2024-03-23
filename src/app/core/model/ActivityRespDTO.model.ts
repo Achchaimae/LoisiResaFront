@@ -12,4 +12,5 @@ export interface ActivityRespDTO{
     guideList: GuideReqDTO[];
     reservations: any[];
     club: ClubRespDTO;
+    description: string;
 }

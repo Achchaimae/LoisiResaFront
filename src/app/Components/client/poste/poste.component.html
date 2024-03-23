@@ -5,57 +5,38 @@
       Day with Horses
     </h1>
     <div class="xl:flex xl:items-center xL:-mx-4">
-      <div class="xl:w-1/2 xl:mx-2">
+      <div class="xl:w-1/2 xl:mx-2" *ngIf="activity && activity.mediaList && activity.mediaList.length > 0">
         <img
           class="object-cover rounded-xl aspect-square"
-          src="https://images.unsplash.com/photo-1534307250431-ef2530a9d8c5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          *ngIf="activity.mediaList[0]?.mediaUrl"
+          [src]="activity.mediaList[0].mediaUrl"
+
           alt=""
         />
       </div>
-
-      <div
-        class="grid grid-cols-1 gap-4 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2"
-      >
-        <div class="gap-4 flex flex-col">
-          <div>
-            <img
-              class="object-cover rounded-xl aspect-square"
-              src="https://images.unsplash.com/photo-1553284965-5dd8352ff1bd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
+      
+      <div class="grid grid-cols-1 gap-4 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2">
+        <ng-container *ngFor="let activitie of activity?.mediaList; let i = index">
+          <!-- Display images starting from the second image -->
+          <div *ngIf="i > 0" class="gap-4 flex flex-col">
+            <div>
+              <img
+                class="object-cover rounded-xl aspect-square"
+                [src]="activitie.mediaUrl"
+                alt=""
+              />
+            </div>
           </div>
-
-          <div>
-            <img
-              class="object-cover rounded-xl aspect-square"
-              src="https://plus.unsplash.com/premium_photo-1661962867254-0198c5182119?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="gap-4 flex flex-col">
-          <div>
-            <img
-              class="object-cover rounded-xl aspect-square"
-              src="https://images.unsplash.com/photo-1604340597565-65b301ca8d8f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-          </div>
-
-          <div>
-            <img
-              class="object-cover rounded-xl aspect-square"
-              src="https://plus.unsplash.com/premium_photo-1681882750973-012586cb4a32?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-          </div>
-        </div>
+        </ng-container>
       </div>
+
     </div>
 
     <div class="mt-10 mx-2">
-      <h1 class="text-2xl font-semibold">TranqHorse- , Casablanca</h1>
-      <p>Food . Riding . Picnic</p>
+      <h1 class="text-2xl font-semibold">
+        {{ activity?.name }} , {{ activity?.club?.location }}
+      </h1>
+      <p>{{ activity?.tag }}</p>
       <div class="flex mt-8">
         <!-- infos -->
         <div class="w-2/3">
@@ -223,7 +204,10 @@
             </div>
             <div class="flex gap-4">
               <div class="text-center">
-                <p class="text-2xl font-semibold">4.60</p>
+                <p class="text-2xl font-semibold">
+                  <span>{{ activity?.rating }}</span> &nbsp;
+                  <i class="fa-solid fa-heart"></i>
+                </p>
                 <div class="flex">
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
@@ -245,13 +229,12 @@
           </div>
 
           <div class="items-center m-4 my-8">
-            <app-program></app-program>
+            <app-program [activityData]="activity"></app-program>
           </div>
         </div>
         <!-- reservation -->
         <div class="w-1/3 rounded-xl">
-
-          <app-reservation></app-reservation>
+          <app-reservation [activityData]="activity"></app-reservation>
         </div>
       </div>
     </div>

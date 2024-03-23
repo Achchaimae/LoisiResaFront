@@ -8,5 +8,6 @@ export interface ActivityReqDTO{
     rating:number;
     club_id:number;
     tag:''|'riding';
+    description: string;
     
 }

@@ -11,10 +11,10 @@
         >
           <div
             class="flex flex-col"
-            *ngFor="let activity of activities | async"
+            *ngFor="let activity of activities | async" [routerLink]="['/poste', activity.id]"
           >
             <div class="relative top-10 left-60">
-              <a
+              <a 
                 class="py-1 font-bold text-gray-100 cursor-pointer"
                 tabindex="0"
                 role="button"

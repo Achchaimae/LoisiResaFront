@@ -17,7 +17,7 @@ export class AdminNavComponent {
 
   getCurrentUser(): void {
     this.currentUser = this.authService.getAuthUser();
-    console.log("dataa",this.currentUser);
+    console.log("data",this.currentUser);
     
   }
 

@@ -27,20 +27,6 @@ export class ActivityComponent {
     this.activityService.getActivities(this.currentPage)
   }
  
-  // selectTag(tag: string): void {
-  //   this.selectedTag = tag;
-  //   this.filterActivitiesByTag();
-  // }
-
-  // filterActivitiesByTag(): void {
-  //   if (this.selectedTag) {
-  //     this.activities = this.activities.filter(activity => this.getActivityTag(activity) === this.selectedTag);
-  //   }
-  // }
-
-  // getActivityTag(activity: ActivityRespDTO): string {
-  //   // Logic to get the tag from the activity, for example:
-  //   return activity.tag; // Assuming each activity has a 'tag' property
-  // }
+  
 }
 

@@ -5,8 +5,8 @@ import { mergeMap, map, switchMap } from 'rxjs/operators';
 import { login } from './user.action';
 import * as MyActions from './user.action';
 import { Observable, of } from 'rxjs';
-import { AuthService } from '../../core/service/auth.service';
-import { User } from '../../core/model/User.model';
+import { AuthService } from '../core/service/auth.service';
+import { User } from '../core/model/User.model';
 
 @Injectable()
 export class AuthEffects {
@@ -30,6 +30,7 @@ export class AuthEffects {
       )
     )
   );
+
 
   // register$ = createEffect(() =>
   //   this.actions$.pipe(
