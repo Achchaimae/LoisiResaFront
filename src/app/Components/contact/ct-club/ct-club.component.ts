@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { ClubRespDTO } from 'src/app/core/model/ClubResp.model';
 import { GuideRespDTO } from 'src/app/core/model/GuideRespDTO.model';
+import { ReservationRespDTO } from 'src/app/core/model/ReservationRespDTO.model';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { ClubService } from 'src/app/core/service/club.service';
 import { GuideService } from 'src/app/core/service/guide.service';
+import { ReservationService } from 'src/app/core/service/reservation.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,13 +18,14 @@ export class CtClubComponent {
   guides:GuideRespDTO[]=[];
   isShowAddGuide : boolean = false;
   isShowAddActivity :boolean = false
-  constructor(private clubService: ClubService,public authService:AuthService, public guideService :GuideService) {}
+  reservations: ReservationRespDTO[] = [];
+  constructor(private clubService: ClubService,public authService:AuthService, public guideService :GuideService, public reservationService :ReservationService) {}
 
   ngOnInit(): void {
     this.getAcceptedClubByOwner();
     this.getGuides();
   }
-
+clubId:number=0;
   getAcceptedClubByOwner() {
     const authUser = this.authService.getAuthUser();
     if (authUser && authUser.id) {
@@ -30,8 +33,9 @@ export class CtClubComponent {
         (club: ClubRespDTO) => {
           this.acceptedClub = club;
           console.log('Accepted Club:', this.acceptedClub);
-
-          // Store the club_id in local storage
+          this.clubId=this.acceptedClub.id
+           
+        this.fetchReservationsByClubId(this.clubId);
         if (this.acceptedClub && this.acceptedClub.id) {
           localStorage.setItem('club_id', this.acceptedClub.id.toString());
         }
@@ -91,6 +95,13 @@ export class CtClubComponent {
         });
       }
     }
-
+    fetchReservationsByClubId(clubId: number): void {
+      this.reservationService.getReservationsByClubId(clubId)
+        .subscribe(reservations => {
+          this.reservations = reservations;
+          console.log("reservation",this.reservations);
+          
+        });
+    }
 
 }

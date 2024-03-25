@@ -12,6 +12,7 @@ import { ProgramComponent } from './program/program.component';
 import { PaimentComponent } from './paiment/paiment.component';
 import { CreditCardComponent } from './credit-card/credit-card.component';
 import { FormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     ReservationComponent,
     ProgramComponent,
     PaimentComponent,
-    CreditCardComponent
+    CreditCardComponent,
+    AboutUsComponent
   ],
   imports: [
     FormsModule, 

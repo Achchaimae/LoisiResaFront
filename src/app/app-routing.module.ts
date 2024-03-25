@@ -16,6 +16,7 @@ import { RegisterComponent } from './Components/auth/register/register.component
 import { AuthGuard } from './guards/auth.guard';
 import { AccountsComponent } from './Components/admin/accounts/accounts.component';
 import { ClubsComponent } from './Components/admin/clubs/clubs.component';
+import { AboutUsComponent } from './Components/client/about-us/about-us.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: "Activity", component :ActivityComponent},
   { path: 'poste/:id', component: PosteComponent },
   {path :"paiment", component:PaimentComponent},
+  {path :"aboutUs",component:AboutUsComponent},
   //contact side 
   {path :"CtHome", component:CThomeComponent},
   {path :"CtClub", component:CtClubComponent},
@@ -36,7 +38,7 @@ const routes: Routes = [
   {path :"login",component:LoginComponent},
   {path: "register", component:RegisterComponent},
   // admin side
-  // {path:"admin",component:AdminComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
+  {path:"admin",redirectTo :"accounts"},
   {path:"accounts",component:AccountsComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
   {path:"Clubs",component:ClubsComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['admin']}},
   {path :"**", component: NotFoundComponent},
