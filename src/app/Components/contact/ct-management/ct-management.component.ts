@@ -14,6 +14,7 @@ export class CtManagementComponent {
   clubId!: number; // Definite assignment assertion
   club: ClubRespDTO | undefined;
   guides: any[] = [];
+  selectedActivity : ActivityRespDTO = {} as ActivityRespDTO 
   isShowGalerie : boolean = false;
 
   constructor(private activityService: ActivityService, private clubService: ClubService) { }
@@ -22,6 +23,11 @@ export class CtManagementComponent {
     this.clubId = Number(localStorage.getItem('club_id')) || 10; // Assuming 'club_id' is stored as a string
     this.getActivitiesByClubId();
     this.getClubDetails(this.clubId);
+  }
+
+  openGalerie(activity: ActivityRespDTO){
+    this.isShowGalerie = true
+    this.selectedActivity = activity
   }
 
   getActivitiesByClubId(): void {
