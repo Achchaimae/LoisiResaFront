@@ -29,10 +29,10 @@ const routes: Routes = [
   {path :"paiment", component:PaimentComponent},
   {path :"aboutUs",component:AboutUsComponent},
   //contact side 
-  {path :"CtHome", component:CThomeComponent},
-  {path :"CtClub", component:CtClubComponent},
-  {path :"CtManagement", component:CtManagementComponent},
-  {path :"CtReservation", component:ReservationComponent},
+  {path :"CtHome", component:CThomeComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['contact']}},
+  {path :"CtClub", component:CtClubComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['contact']}},
+  {path :"CtManagement", component:CtManagementComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['contact']}},
+  {path :"CtReservation", component:ReservationComponent,canActivate: [AuthGuard] , data: { allowedRoles: ['contact']}},
   // guide side
   {path :"guide", component: GHomeComponent},
   {path :"login",component:LoginComponent},
