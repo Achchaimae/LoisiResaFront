@@ -2,7 +2,6 @@
 <div>
   <app-categorie></app-categorie>
   <div class="mt-20 px-8">
-  
     <div class="bg-white">
       <div class="container mx-auto">
         <div
@@ -10,16 +9,36 @@
         >
           <div
             class="flex flex-col"
-            *ngFor="let activity of activities | async" [routerLink]="['/poste', activity.id]"
+            *ngFor="let activity of activities | async"
+            [routerLink]="['/poste', activity.id]"
           >
+            <!-- <div class="relative top-10 left-60">
+              <a
+                class="py-1 font-bold text-gray-100 cursor-pointer"
+                tabindex="0"
+                role="button"
+              >
+                
+                <button
+                  (click)="rateActivity(activity.id)"
+                  class="py-1 font-bold text-gray-100 cursor-pointer"
+                  tabindex="0"
+                  role="button"
+                >
+                  <i class="fa-regular fa-heart text-2xl hover:text-white"></i>
+                </button>
+              </a>
+            </div> -->
             <div class="relative top-10 left-60">
-              <a 
+              <!-- Like button with click event -->
+              <span
+                (click)="likeActivity(activity.id, $event)"
                 class="py-1 font-bold text-gray-100 cursor-pointer"
                 tabindex="0"
                 role="button"
               >
                 <i class="fa-regular fa-heart text-2xl hover:text-white"></i>
-              </a>
+              </span>
             </div>
             <div *ngIf="activity.mediaList && activity.mediaList.length > 0">
               <img

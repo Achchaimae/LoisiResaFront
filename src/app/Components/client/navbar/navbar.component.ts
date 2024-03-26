@@ -15,7 +15,7 @@ export class NavbarComponent {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    // Check authentication status when the component initializes
+    
     this.checkAuthentication();
   }
 
@@ -33,8 +33,8 @@ export class NavbarComponent {
   logout() {
     // Clear authentication token and user data
     this.authService.clearAuthToken();
-    // Redirect to the login page or any other desired route
-    console.log("waaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    console.log("out");
+    this.checkAuthentication();
     
   }
   

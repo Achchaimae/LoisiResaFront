@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: "" ,component:HomeComponent},
   {path: "home" ,component:HomeComponent},
   {path: "Activity", component :ActivityComponent},
-  { path: 'poste/:id', component: PosteComponent },
+  { path: 'poste/:id', component: PosteComponent ,canActivate: [AuthGuard] , data: { allowedRoles: ['client']}},
   {path :"paiment", component:PaimentComponent},
   {path :"aboutUs",component:AboutUsComponent},
   //contact side 

@@ -10,9 +10,10 @@ import { AuthService } from 'src/app/core/service/auth.service';
 export class AdminNavComponent {
   currentUser: User | null = null;
   constructor(private authService: AuthService) {}
-
+  isAuthenticated = false; // Flag to track authentication status
   ngOnInit(): void {
     this.getCurrentUser();
+    this.checkAuthentication();
   }
 
   getCurrentUser(): void {
@@ -20,9 +21,18 @@ export class AdminNavComponent {
     console.log("data",this.currentUser);
     
   }
-
-  logout(): void {
+  checkAuthentication() {
+    
+    this.authService.isAuthenticated().subscribe((authenticated) => {
+      this.isAuthenticated = authenticated;
+      console.log(this.isAuthenticated);
+    });
+  }
+  logout() {
+    // Clear authentication token and user data
     this.authService.clearAuthToken();
-    // Add any other logout logic here, such as routing to the login page
+    console.log("out");
+    this.checkAuthentication();
+    
   }
 }

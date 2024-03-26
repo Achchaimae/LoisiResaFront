@@ -27,6 +27,17 @@ export class ActivityComponent {
     this.activityService.getActivities(this.currentPage)
   }
  
-  
+  rateActivity(activityId: number): void {
+    this.activityService.rateActivity(activityId).subscribe(() => {
+    
+      this.getActivities();
+    });
+  }
+  likeActivity(activityId: number, event: Event): void {
+    event.stopPropagation();
+    this.activityService.rateActivity(activityId).subscribe(() => {
+    
+      this.getActivities();
+    });}
 }
 

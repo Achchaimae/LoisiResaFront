@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/core/service/auth.service';
 export class NavbarComponent {
   isOpen = false;
 
-  isAuthenticated = false; // Flag to track authentication status
+  isAuthenticated = false; 
   router: any;
 
   constructor(private authService: AuthService) {}
@@ -31,10 +31,10 @@ export class NavbarComponent {
     });
   }
   logout() {
-    // Clear authentication token and user data
     this.authService.clearAuthToken();
-    // Redirect to the login page or any other desired route
-    console.log("waaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    console.log("out");
+    this.checkAuthentication();
+
     
   }
   

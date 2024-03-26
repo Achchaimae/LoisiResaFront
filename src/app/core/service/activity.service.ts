@@ -45,4 +45,8 @@ export class ActivityService {
       this.activities.next(res.content as ActivityRespDTO[])
     })
   }
+  rateActivity(activityId: number): Observable<ActivityRespDTO> {
+    return this.http.put<ActivityRespDTO>(`${this.apiUrl}/${activityId}/like`, {});
+}
+
 }
